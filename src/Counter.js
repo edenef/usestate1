@@ -6,7 +6,7 @@ function Counter(props) {
     function incr(){
         setCount(
             function(oldConter){
-              if ((oldConter+delta)>=max)
+              if ((oldConter+delta)>max)
               {
                 return 0}
               return oldConter+delta
