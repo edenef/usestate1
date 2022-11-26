@@ -1,11 +1,15 @@
 import {useState, usestate} from "react";
 function Counter(props) {
-    const [count,setCount]=useState(1)
+    const [count,setCount]=useState(0)
     const {delta}=props
+    const {max}=props
     function incr(){
         setCount(
             function(oldConter){
-                return oldConter+delta
+              if ((oldConter+delta)>=max)
+              {
+                return 0}
+              return oldConter+delta
             }
         )
         console.log(count)
